@@ -215,6 +215,26 @@ namespace AirlineManagementApp
             {
                 using (var context = new ApplicationDbContext())
                 {
+                    bool tripNumberExists = context.Passengers.Any(p =>
+                        p.TripNO == tripNo && p.Id != _editingPassengerId);
+                    if (tripNumberExists)
+                    {
+                        MessageBox.Show("A passenger with this trip number already exists.", "Duplicate Trip Number",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txtTripNo.Focus();
+                        return;
+                    }
+
+                    bool passportNumberExists = context.Passengers.Any(p =>
+                        p.PassportNum == passportNo && p.Id != _editingPassengerId);
+                    if (passportNumberExists)
+                    {
+                        MessageBox.Show("A passenger with this passport number already exists.", "Duplicate Passport Number",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txtPassportNum.Focus();
+                        return;
+                    }
+
                     Passenger passenger;
                     string successMessage;
 
