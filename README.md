@@ -1,6 +1,30 @@
 # Airline Reservation System
 
+[![C#](https://img.shields.io/badge/C%23-Windows%20Forms-512BD4?logo=dotnet)](https://learn.microsoft.com/dotnet/desktop/winforms/)
+![.NET Framework](https://img.shields.io/badge/.NET%20Framework-4.7.2-5C2D91)
+![Entity Framework](https://img.shields.io/badge/Entity%20Framework-6.5.1-6DB33F)
+
 A Windows Forms desktop application for managing airline flights and passengers. The project was created as a college application and demonstrates CRUD operations, input validation, filtering, Entity Framework relationships, and a SQL Server LocalDB database.
+
+## Application Preview
+
+> These UI previews are based on the project's Windows Forms Designer layouts and use sample data for presentation. Run the project on Windows to interact with the actual application.
+
+### Main Menu
+
+![Airline management main menu](docs/screenshots/main-menu.png)
+
+### Flight Management
+
+![Flight management screen](docs/screenshots/flight-management.png)
+
+### Passenger Management
+
+![Passenger management screen](docs/screenshots/passenger-management.png)
+
+### Filter Passengers
+
+![Passenger nationality filter screen](docs/screenshots/filter-passengers.png)
 
 ## Features
 
@@ -32,6 +56,11 @@ AirlineManagementApp/
 ├── Properties/
 │   └── AssemblyInfo.cs
 ├── docs/
+│   ├── screenshots/
+│   │   ├── filter-passengers.png
+│   │   ├── flight-management.png
+│   │   ├── main-menu.png
+│   │   └── passenger-management.png
 │   └── PROJECT_REVIEW.md
 ├── AboutForm.*
 ├── FilteringForm.*
@@ -52,6 +81,42 @@ AirlineManagementApp/
 - A `Flight` can have many passengers.
 - A `Passenger` can be assigned to one flight.
 - The passenger-to-flight relationship is optional, so a passenger can exist before a flight is selected.
+
+```mermaid
+erDiagram
+    FLIGHT ||--o{ PASSENGER : has
+    FLIGHT {
+        int FlightId PK
+        string FlightNumber
+        string OriginCity
+        string DestinationCity
+        datetime DepartureDateTime
+        string Airline
+    }
+    PASSENGER {
+        int Id PK
+        string Name
+        int TripNO
+        string PhoneNum
+        int PassportNum
+        string Nationality
+        int FlightId FK "nullable"
+    }
+```
+
+## Architecture
+
+The application follows a straightforward desktop architecture suitable for a small college project:
+
+```mermaid
+flowchart LR
+    UI[Windows Forms UI] --> EF[Entity Framework 6]
+    EF --> DB[(SQL Server LocalDB)]
+```
+
+- Forms handle user input, validation, and screen navigation.
+- Entity Framework maps the C# models to the LocalDB database.
+- `ApplicationDbContext` provides the shared data-access entry point.
 
 ## Requirements
 
