@@ -56,63 +56,63 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AboutForm.cs">
+    <Compile Include="Forms\About\AboutForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AboutForm.Designer.cs">
+    <Compile Include="Forms\About\AboutForm.Designer.cs">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ApplicationDbContext.cs" />
-    <Compile Include="FilteringForm.cs">
+    <Compile Include="Database\ApplicationDbContext.cs" />
+    <Compile Include="Forms\Filtering\FilteringForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FilteringForm.Designer.cs">
+    <Compile Include="Forms\Filtering\FilteringForm.Designer.cs">
       <DependentUpon>FilteringForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FlightForm.cs">
+    <Compile Include="Forms\Flights\FlightForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FlightForm.Designer.cs">
+    <Compile Include="Forms\Flights\FlightForm.Designer.cs">
       <DependentUpon>FlightForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Forms\Main\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Forms\Main\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PassengerForm.cs">
+    <Compile Include="Forms\Passengers\PassengerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PassengerForm.Designer.cs">
+    <Compile Include="Forms\Passengers\PassengerForm.Designer.cs">
       <DependentUpon>PassengerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Flight.cs" />
     <Compile Include="Models\Passenger.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewPassengersByFlightForm.cs">
+    <Compile Include="Forms\PassengersByFlight\ViewPassengersByFlightForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewPassengersByFlightForm.Designer.cs">
+    <Compile Include="Forms\PassengersByFlight\ViewPassengersByFlightForm.Designer.cs">
       <DependentUpon>ViewPassengersByFlightForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AboutForm.resx">
+    <EmbeddedResource Include="Forms\About\AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FilteringForm.resx">
+    <EmbeddedResource Include="Forms\Filtering\FilteringForm.resx">
       <DependentUpon>FilteringForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FlightForm.resx">
+    <EmbeddedResource Include="Forms\Flights\FlightForm.resx">
       <DependentUpon>FlightForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="Forms\Main\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PassengerForm.resx">
+    <EmbeddedResource Include="Forms\Passengers\PassengerForm.resx">
       <DependentUpon>PassengerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewPassengersByFlightForm.resx">
+    <EmbeddedResource Include="Forms\PassengersByFlight\ViewPassengersByFlightForm.resx">
       <DependentUpon>ViewPassengersByFlightForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

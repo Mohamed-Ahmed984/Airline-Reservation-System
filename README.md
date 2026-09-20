@@ -50,6 +50,21 @@ A Windows Forms desktop application for managing airline flights and passengers.
 
 ```text
 AirlineManagementApp/
+├── Database/
+│   └── ApplicationDbContext.cs
+├── Forms/
+│   ├── About/
+│   │   └── AboutForm.*
+│   ├── Filtering/
+│   │   └── FilteringForm.*
+│   ├── Flights/
+│   │   └── FlightForm.*
+│   ├── Main/
+│   │   └── MainForm.*
+│   ├── Passengers/
+│   │   └── PassengerForm.*
+│   └── PassengersByFlight/
+│       └── ViewPassengersByFlightForm.*
 ├── Models/
 │   ├── Flight.cs
 │   └── Passenger.cs
@@ -61,14 +76,8 @@ AirlineManagementApp/
 │   │   ├── flight-management.png
 │   │   ├── main-menu.png
 │   │   └── passenger-management.png
+│   ├── GITHUB_SETUP.md
 │   └── PROJECT_REVIEW.md
-├── AboutForm.*
-├── FilteringForm.*
-├── FlightForm.*
-├── MainForm.*
-├── PassengerForm.*
-├── ViewPassengersByFlightForm.*
-├── ApplicationDbContext.cs
 ├── Program.cs
 ├── App.config
 ├── packages.config
