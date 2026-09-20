@@ -197,6 +197,18 @@ namespace AirlineManagementApp
             {
                 using (var context = new ApplicationDbContext())
                 {
+                    string flightNumber = txtFlightNumber.Text.Trim();
+                    bool flightNumberExists = context.Flights.Any(f =>
+                        f.FlightNumber == flightNumber && f.FlightId != _editingFlightId);
+
+                    if (flightNumberExists)
+                    {
+                        MessageBox.Show("A flight with this flight number already exists.", "Duplicate Flight",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txtFlightNumber.Focus();
+                        return;
+                    }
+
                     Flight flight;
                     string successMessage;
 
@@ -219,7 +231,7 @@ namespace AirlineManagementApp
                         successMessage = "Flight updated successfully!";
                     }
 
-                    flight.FlightNumber = txtFlightNumber.Text.Trim();
+                    flight.FlightNumber = flightNumber;
                     flight.OriginCity = txtOriginCity.Text.Trim();
                     flight.DestinationCity = txtDestinationCity.Text.Trim();
                     flight.DepartureDateTime = dtpDeparture.Value;
