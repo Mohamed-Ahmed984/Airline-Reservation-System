@@ -159,10 +159,10 @@ namespace AirlineManagementApp
                 return false;
             }
 
-            // 5. Validate Departure DateTime: Optional - ensure it's not in the past.
-            if (dtpDeparture.Value < DateTime.Now.Date) // Comparing only date part, or DateTime.Now for exact time
+            // 5. Ensure the complete departure date and time is in the future.
+            if (dtpDeparture.Value <= DateTime.Now)
             {
-                MessageBox.Show("Departure date cannot be in the past.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Departure date and time must be in the future.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 dtpDeparture.Focus();
                 return false;
             }
